@@ -308,13 +308,15 @@
         
         function toggleRideOptions() {
             const rideOptionsDiv = document.querySelector('.ride-options');
-
+            const mapContainer = document.querySelector('.map-container');
+            
             if (pickupLocation) {
                 if (isDrivexPickupLocation(pickupLocation)) {
                     rideOptionsDiv.style.display = 'block';
                     console.log("Pickup location matches DriveX Pickup Point. Ride options shown.");
                 } else {
                     rideOptionsDiv.style.display = 'none';
+                    mapContainer.style.width = '100%';
                     console.log("Pickup location does not match DriveX Pickup Point. Ride options hidden.");
                 }
             } else {
